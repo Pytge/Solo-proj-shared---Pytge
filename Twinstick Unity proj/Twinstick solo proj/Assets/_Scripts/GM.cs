@@ -19,12 +19,21 @@ public class GM : MonoBehaviour
         Debug.Log("TakeDamage");
         health -= damage;
         HealthUpdate();
+        HealthDeathCheck();
     }
 
     public void HealthUpdate()
     {
         
         healthFill.sizeDelta = new Vector2((health*4f), 100f);
+    }
+    private void HealthDeathCheck()
+    {
+        if (health<=0)
+        {
+            Debug.Log("Death");
+            //Time.timeScale = (0f);
+        }
     }
 
 
